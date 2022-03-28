@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalWindowService } from './services/modal-window.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Mithraeum-test';
+  public title = 'Mithraeum-test';
+  public isShowModal$ = this.modalWindowService.isShowModal$;
+
+  constructor(public modalWindowService: ModalWindowService) {}
 }
