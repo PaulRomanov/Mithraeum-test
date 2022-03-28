@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="modal-window">
+    <div class="content_container">
+      <form class="login-form" [formGroup]="form" (ngSubmit)="(login)">
+        <div class="form-control">
+          <label>Email</label>
+          <input
+            type="text"
+            placeholder="Enter your email"
+            formControlName="email"
+          />
+        </div>
+          <div
+            *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+            class="validation"
+          >
+            <small *ngIf="form.get('email')?.errors?.['required']">
+              Email field cannot be empty
+            </small>
+
+            <small *ngIf="form.get('email')?.errors?.['email']">
+              Please enter a valid email
+            </small>
+          </div>
+
+
+        <div class="form-control">
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            formControlName="password"
+          />
+        </div>
+          <div
+            *ngIf="
+              form.get('password')?.invalid && form.get('password')?.touched
+            "
+            class="validation"
+          >
+            <small *ngIf="form.get('password')?.errors?.['required']">
+              Password field cannot be empty
+            </small>
+
+            <small *ngIf="form.get('password')?.errors?.['minlength']">
+              The number of characters should be
+              {{ form.get("password")?.errors?.['minlength'].requiredLength }}.
+              Now the number of characters
+              {{ form.get("password")?.errors?.['minlength'].actualLength }}
+            </small>
+          </div>
+
+
+        <div class="buttons">
+          <button class="btn unfilled-btn" type="button" (click)="closeModal()">
+            cancel
+          </button>
+          <button
+            class="btn filled-btn"
+            type="submit"
+            (click)="login()"
+            [disabled]="form.invalid || form.disabled"
+          >
+          login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
