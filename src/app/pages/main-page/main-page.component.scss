@@ -1,0 +1,31 @@
+@import "../../assets/constants/constants.scss";
+
+.button-login,
+.button-logout {
+  button {
+    width: 100px;
+    height: 30px;
+    background-color: $blueColor;
+    color: $noColor;
+    border-radius: 20px 0 0 20px;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 0;
+    cursor: pointer;
+  }
+}
+
+.button-login:hover,
+.button-logout:hover {
+  cursor: pointer;
+}
+
+.hidden-btn {
+  display: none;
+}
+
+.wrapper-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
