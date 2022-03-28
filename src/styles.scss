@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+@import './app/assets/constants/constants.scss';
+
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.btn {
+  min-width: 100px;
+  margin: 0 10px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  box-shadow: 2px 2px 4px 0 $shadow-color;
+  transition-duration: 0.2s;
+  &:hover {
+    box-shadow: 4px 4px 4px 0 $shadow-color;
+    transform: translateY(-1px);
+    cursor: pointer;
+  }
+  &:disabled,
+  &[disabled]{
+    &:hover {
+      box-shadow: 2px 2px 4px 0 $shadow-color;
+      transform: none;
+      cursor: default;
+    }
+  border: 1px solid $disabledButtonBorderColor;
+  background-color: $disabledButtonBackground;
+  color: $disabledButtonColor
+}
+}
+.unfilled-btn {
+  background-color: $noColor;
+  border: 1px solid #b8bcc5;
+  color: $blueColor;
+}
+
+.filled-btn {
+  background-color: $blueColor;
+  color: $noColor;
+}
+
+.wrapper-page{
+  display: flex;
+  justify-content: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.wrapper-content {
+  flex: 0 1 80%;
+}
