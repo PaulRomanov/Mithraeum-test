@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { ModalWindowService } from 'src/app/services/modal-window.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { ModalWindowService } from 'src/app/services/modal-window.service';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(public modalWindowService: ModalWindowService) { }
+  constructor(
+    public modalWindowService: ModalWindowService,
+    public authService: AuthService,
+    ) { }
 
   ngOnInit() {
   }

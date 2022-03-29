@@ -3,11 +3,13 @@ import { HttpClient } from "@angular/common/http"
 import { map, Observable } from "rxjs";
 import { ResponseLogin } from "../interfaces/interfaces";
 
+
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  public userEmail: string | null = '';
   public isAuthLogin: boolean = false;
   public userObj = {
     email: '',
@@ -16,7 +18,7 @@ export class AuthService {
 
   public login(email: string, password: string): Observable<ResponseLogin> {
 
-    const requestURL = '../assets/users/users.json';
+    const requestURL = '../../assets/users/users.json';
 
     return this.http.get<ResponseLogin>(requestURL).pipe(
 
